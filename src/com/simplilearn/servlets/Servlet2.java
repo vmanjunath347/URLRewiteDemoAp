@@ -29,13 +29,9 @@ public class Servlet2 extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
-		Cookie ck[] = request.getCookies();
+		String userName = request.getParameter("userName");
 		
-		for (int i = 0; i < ck.length; i++) {
-			
-			//print name and values of cookie data
-			out.print("<br> "+ck[i].getName() +"  "+ck[i].getValue());
-		}
+		out.println("Hello , "+userName);
 		out.close();
 	}
 

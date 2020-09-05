@@ -35,17 +35,9 @@ public class Servlet1 extends HttpServlet {
 		
 		out.print("Welcome User :- " + userName);
 		
-		// create a cookie
-		Cookie ck1 = new Cookie("userId", userId);
-		Cookie ck2 = new Cookie("userName", userName);
+		// Rewrite URl for appending userInfo		
+		out.print("<a href='servlet2?userName="+userName+"'> Next Request </a>");
 		
-		response.addCookie(ck1);
-		response.addCookie(ck2);
-		
-		// create a form for next request
-		out.print("<form method='GET' action='servlet2' >");
-		out.print("<input type='submit' value='Next Request'>");
-		out.print("</form>");
 		out.close();
 	}
 
